@@ -1,0 +1,107 @@
+body {
+    font-family: 'Fredoka One', cursive;
+    background-color: #a8e6cf;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+    color: #333;
+}
+
+header h1 {
+    font-family: 'Mochiy Pop One', sans-serif;
+    color: #ff8b94;
+    font-size: 3rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+header p {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+#soundboard-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.animal-card {
+    background-color: #ff8b94;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    overflow: hidden;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    border: 5px solid #fff;
+}
+
+.animal-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.animal-card.playing {
+    animation: bounce 0.5s ease;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: scale(1.05);
+    }
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+
+.animal-card img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    background-color: #ffd3b6;
+    border: 4px solid #fff;
+}
+
+.animal-card .animal-name {
+    margin-top: 15px;
+    font-size: 1.5rem;
+    color: white;
+    text-transform: capitalize;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+@media (max-width: 768px) {
+    .animal-card {
+        width: 150px;
+    }
+    .animal-card img {
+        width: 100px;
+        height: 100px;
+    }
+    header h1 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .animal-card {
+        width: calc(50% - 30px);
+    }
+     header h1 {
+        font-size: 2rem;
+    }
+     header p {
+        font-size: 1rem;
+    }
+}
+
